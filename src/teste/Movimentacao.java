@@ -1,27 +1,43 @@
 package teste;
 
-
-import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Movimentacao {
-    BigDecimal valor; 
-    int pagante_id; 
-    int receptor_id; 
-    String data;
+    private ArrayList<Double> valor = new ArrayList<>();
+    private ArrayList<Integer> pagante_id = new ArrayList<>();
+    private ArrayList<Integer> receptor_id = new ArrayList<>();
+    private ArrayList<Integer> tipo_movimentacao = new ArrayList<>(); 
+    private ArrayList<String> data = new ArrayList<>();
 
-    public BigDecimal exibirValor() {
-        return valor;
+    public void adicionarMovimentacao(Double valor, int pagante_id, int receptor_id, int tipo, String data) {
+        this.valor.add(valor);
+        this.pagante_id.add(pagante_id);
+        this.receptor_id.add(receptor_id);
+        this.tipo_movimentacao.add(tipo);
+        this.data.add(data);
     }
 
-    public int exibirPagante() {
-        return pagante_id;
+    public double exibirValor(int index) {
+        return valor.get(index);
     }
 
-    public int exibirReceptor() {
-        return receptor_id;
+    public int exibirPagante(int index) {
+        return pagante_id.get(index);
     }
 
-    public String exibirData() { 
-        return data;
+    public int exibirReceptor(int index) {
+        return receptor_id.get(index);
+    }
+
+    public int exibirTipoMovimentacao(int index) {
+        return tipo_movimentacao.get(index);
+    }
+
+    public String exibirData(int index) {
+        return data.get(index);
+    }
+
+    public int tamanho() {
+        return valor.size();
     }
 }
