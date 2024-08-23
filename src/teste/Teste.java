@@ -38,6 +38,8 @@ public class Teste {
                     Double saldoReceptor = contas.saldo[id_receptor];
                     if (saldoPagador < transacaoValor) {
                         System.out.println("Pagador não tem saldo");
+                    } if (id_pagador == id_receptor) {
+                        System.out.println("Id do pagador não pode ser igual ao do receptor.");
                     } else {
                         saldoReceptor += transacaoValor;
                         saldoPagador -= transacaoValor;
@@ -49,7 +51,7 @@ public class Teste {
                     }
                 } catch (Exception e) {
                     System.out.println("Erro na transação. Verifique os dados inseridos.");
-                    scan.nextLine(); // Limpar o buffer do scanner
+                    scan.nextLine(); 
                 }
             } else if (acao == 2) {
                 try {
@@ -68,7 +70,7 @@ public class Teste {
                     }
                 } catch (Exception e) {
                     System.out.println("Erro no depósito. Verifique os dados inseridos.");
-                    scan.nextLine(); // Limpar o buffer do scanner
+                    scan.nextLine(); 
                 }
             } else if (acao == 3) {
                 try {
@@ -91,7 +93,7 @@ public class Teste {
                     }
                 } catch (Exception e) {
                     System.out.println("Erro no saque. Verifique os dados inseridos.");
-                    scan.nextLine(); // Limpar o buffer do scanner
+                    scan.nextLine(); 
                 }
             } else if (acao == 4) {
                 System.out.println("Extrato de Movimentações:");
